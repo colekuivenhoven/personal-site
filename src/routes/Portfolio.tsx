@@ -94,35 +94,26 @@ function Portfolio(props:any) {
         },
         {
             title: "Air Splitter",
-            overview: `The Homer Forder Tennis Center(HFTC) web application is the active web presenece, reservation mangement,
-                       and user management system for the Homer Ford Tennis Center. The application is built with React, and
-                       features reservations systems for both the customers and employees. This application was made to replace
-                       their existing paper-based systems.
+            overview: `Air Splitter is a web application that allows users to upload songs to the application(which will be stored in the server),
+                       then isolate the song into either 2 stems(vocal, instrumental) or 4 stems(vocal, instrumental, bass, drums).
                       `,
             development: [
                 {
-                    name: "Dual-sided Reservation System",
+                    name: "Deep Learning Vocal Isolation",
                     desc: `Separate reservation systems made to account for the simplicity a customer needs, and the complexity an employee needs.`,
                 },
                 {
-                    name: "User Management System",
+                    name: "ExpressJS Python Integration",
                     desc: `
                         Detailed user management allows employees to perform full CRUD operations on the user database without having to leave the
                         web application. 
                         `,
                 },
                 {
-                    name: "Dynamic Database Reports",
+                    name: "Dynamic Isolation Options",
                     desc: `
                         The employee facing side of the application features a dynamic database report system that allows employees to view SQL 
                         query-based reports on various tables in the database.
-                    `,
-                },
-                {
-                    name: "Notification System",
-                    desc: `
-                        The customer facing side of the application features a notification system that allows customers to enable and recieve
-                        notifications from the system regarding their reservations.
                     `,
                 },
             ],
@@ -138,7 +129,7 @@ function Portfolio(props:any) {
                       `,
             development: [
                 {
-                    name: "Dual-sided Reservation System",
+                    name: "Dual-sided Project Management System",
                     desc: `Separate reservation systems made to account for the simplicity a customer needs, and the complexity an employee needs.`,
                 },
                 {
@@ -149,14 +140,14 @@ function Portfolio(props:any) {
                         `,
                 },
                 {
-                    name: "Dynamic Database Reports",
+                    name: "Timesheet Management System",
                     desc: `
                         The employee facing side of the application features a dynamic database report system that allows employees to view SQL 
                         query-based reports on various tables in the database.
                     `,
                 },
                 {
-                    name: "Notification System",
+                    name: "Multi-device support",
                     desc: `
                         The customer facing side of the application features a notification system that allows customers to enable and recieve
                         notifications from the system regarding their reservations.
@@ -175,28 +166,21 @@ function Portfolio(props:any) {
                       `,
             development: [
                 {
-                    name: "Dual-sided Reservation System",
+                    name: "OpenWeather API Integration",
                     desc: `Separate reservation systems made to account for the simplicity a customer needs, and the complexity an employee needs.`,
                 },
                 {
-                    name: "User Management System",
+                    name: "Multi-device support",
                     desc: `
                         Detailed user management allows employees to perform full CRUD operations on the user database without having to leave the
                         web application. 
                         `,
                 },
                 {
-                    name: "Dynamic Database Reports",
+                    name: "Darkmode Toggle",
                     desc: `
                         The employee facing side of the application features a dynamic database report system that allows employees to view SQL 
                         query-based reports on various tables in the database.
-                    `,
-                },
-                {
-                    name: "Notification System",
-                    desc: `
-                        The customer facing side of the application features a notification system that allows customers to enable and recieve
-                        notifications from the system regarding their reservations.
                     `,
                 },
             ],
@@ -212,25 +196,25 @@ function Portfolio(props:any) {
                       `,
             development: [
                 {
-                    name: "Dual-sided Reservation System",
+                    name: "Live with AWS Amplify & Route 53",
                     desc: `Separate reservation systems made to account for the simplicity a customer needs, and the complexity an employee needs.`,
                 },
                 {
-                    name: "User Management System",
+                    name: "Custom Image Carousel",
                     desc: `
                         Detailed user management allows employees to perform full CRUD operations on the user database without having to leave the
                         web application. 
                         `,
                 },
                 {
-                    name: "Dynamic Database Reports",
+                    name: "Real-time Typing Animation",
                     desc: `
                         The employee facing side of the application features a dynamic database report system that allows employees to view SQL 
                         query-based reports on various tables in the database.
                     `,
                 },
                 {
-                    name: "Notification System",
+                    name: "Multi-device support",
                     desc: `
                         The customer facing side of the application features a notification system that allows customers to enable and recieve
                         notifications from the system regarding their reservations.
@@ -251,7 +235,13 @@ function Portfolio(props:any) {
                 }}
             >
                 {!alt && <div className={`portfolio-info-img ${id}`} 
-                    onClick={() => window.open(links[0].link, "_blank")}
+                    // onClick={() => window.open(links[0].link, "_blank")}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        setPortfolioInfo(moreInfoList[num]);
+                        toggleModal();
+                        resetCarousel();
+                    }} 
                 />}
                 <div className="portfolio-info-content">
                     <span className="portfolio-info-title">{title}</span>
@@ -289,7 +279,13 @@ function Portfolio(props:any) {
                     </div>
                 </div>
                 {alt && <div className={`portfolio-info-img ${id}`} 
-                    onClick={() => window.open(links[0].link, "_blank")}
+                    // onClick={() => window.open(links[0].link, "_blank")}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        setPortfolioInfo(moreInfoList[num]);
+                        toggleModal();
+                        resetCarousel();
+                    }} 
                 />}
             </div>
         )
