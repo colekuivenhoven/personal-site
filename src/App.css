@@ -1,38 +1,203 @@
+@font-face {
+  font-family: 'Round';
+  src: local('Round'), url('./assets/fonts/VarelaRound-Regular.ttf');
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 0.75vmin;
+  background-color: transparent;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 1vmin;
+  background-color: rgba(0,0,0, 0.35);
+  scroll-behavior: smooth;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: rgba(250,250,250,1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: fit-content;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  font-family: Round;
+}
+
+.text-sm {
+  color: rgba(255,255,255,0.8);
+  font-size: 1vmin;
+}
+
+.text-med {
+  color: rgba(255,255,255,0.8);
+  font-size: 2vmin;
+}
+
+.text-lg {
+  color: rgba(255,255,255,0.8);
+  font-size: 3vmin;
+}
+
+.container-primary {
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 0.5vmin;
+  padding: 1vmin;
+  margin: 1vmin;
+}
+
+.container-secondary {
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 0.5vmin;
+  padding: 1vmin;
+  margin: 1vmin;
+}
+
+.container-transparent {
+  background-color: rgba(255,255,255,0.0);
+  padding: 1vmin;
+}
+
+.clickable {
+  cursor: pointer;
+  background-color: rgba(0, 102, 255, 0.5);
+  user-select: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.clickable:hover {
+  background-color: rgba(0, 102, 255, 0.2);
+}
+
+.active {
+  opacity: 100%;
+  pointer-events: auto;
+}
+
+.inactive {
+  opacity: 30%;
+  pointer-events: none;
+  cursor: auto;
+}
+
+.center-column {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.center-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
+.logo {
+  width: 9vmin;
+  aspect-ratio: 1;
+  background-color: transparent;
+  background-image: url('./assets/images/Initials.png');
+  background-size: 180% 180%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: auto;
+  margin-left: 2vmin;
+  animation: slideIn_Top 1s cubic-bezier(.05,1.16,.44,.97);
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  transform: translateY(-10vmin);
+  opacity: 0;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 10vmin;
+  background-color: rgba(0,0,255,0.0);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;  
+}
+
+.nav-links {
+  background-color: rgba(255,0,0,0.0);
+  margin-top: 2.5vmin;
+  margin-right: 2vmin;
+  height: 5vmin;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center; 
+  box-sizing: border-box;
+  padding: 0.5vh; 
+}
+
+.nav-route-btn {
+  color: rgba(42, 176, 142, 0.3);
+  font-size: 3vmin;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 2vmin;
+  animation: slideIn_Top 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  transform: translateY(-10vmin);
+  opacity: 0;
+  user-select: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 2;
+  transition: color 0.15s ease-in-out;
+}
+
+.nav-route-btn.active {
+  color: rgba(42, 176, 142, 1);
+  
+}
+
+.nav-route-btn:hover {
+  color: rgba(62, 217, 126, 0.8);
+}
+
+.nav-route-btn.active:hover {
+  color: rgba(42, 176, 142, 0.9);
+}
+
+.nav-follower {
+  position: absolute;
+  width: 5vmin;
+  height: 1.5vmin;
+  background-color: rgba(62, 217, 126, 0.4);
+  border-radius: 1vmin;
+  transition: all 0.25s cubic-bezier(.05,1.16,.44,.97);
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes slideIn_Top {
   from {
-    transform: rotate(0deg);
+    transform: translateY(-10vmin);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    transform: translateY(0vmin);
+    opacity: 100%;
   }
 }
