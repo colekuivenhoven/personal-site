@@ -198,6 +198,6 @@ body::-webkit-scrollbar-thumb {
   }
   to {
     transform: translateY(0vmin);
-    opacity: 100%;
+    opacity: 1;
   }
 }

@@ -1,0 +1,11 @@
+// Add all to local repo
+git add .
+
+// Commit local repo with message
+git commit -m "Updated Resume #3"
+
+// Push to remote repo
+git push -u origin master --force
+
+// Pull changes
+git pull
