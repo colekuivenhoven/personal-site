@@ -53,6 +53,8 @@ function Portfolio(props:any) {
         image_border: ""
     })
     const [imageNum, setImageNum] = useState(0);
+    const [touchStart, setTouchStart] = useState(0);
+    const [touchEnd, setTouchEnd] = useState(0);
 
     const moreInfoList:TPortfolioInfo[] = [
         {
@@ -295,8 +297,8 @@ function Portfolio(props:any) {
         setModalActive(!modalActive);
     }
 
-    function moveCarousel(e:React.MouseEvent<HTMLDivElement, MouseEvent>, index:number) {
-        let self = e.currentTarget as HTMLDivElement;
+    function moveCarousel(target:EventTarget & HTMLDivElement, index:number) {
+        let self = target as HTMLDivElement;
         let parent = self.parentNode as HTMLDivElement;
 
         parent.style.transform = `translateX(-${((self.getBoundingClientRect().width + _v.vmin * 2) * index)}px)`;
@@ -316,16 +318,23 @@ function Portfolio(props:any) {
                         style={{
                             border: `${image_border}`
                         }}
+                        onTouchStart={(e) => handleTouchStart(e)}
+                        onTouchMove={(e) => handleTouchMove(e)}
+                        onTouchEnd={() => handleTouchEnd(image.length)}
                     >
                         {image.map((img, index) => {
                             return (
-                                <div className={`section-image ${imageNum == index ? "active" : ""}`} key={index}
+                                <div 
+                                    className={`section-image ${imageNum == index ? "active" : ""}`} key={index}
+                                    id={`mult-img-${index}`}
                                     style={{
                                         backgroundImage: `url(${img})`
                                     }}
                                     onClick={(e) => {
-                                        setImageNum(index);
-                                        moveCarousel(e, index);
+                                        if(imageNum != index) {
+                                            setImageNum(index);
+                                            moveCarousel(e.currentTarget, index);
+                                        }
                                     }}
                                 />
                             )
@@ -351,6 +360,36 @@ function Portfolio(props:any) {
                 </div>
             </>
         );
+    }
+
+    /* Carousel Touch Handling */
+    /* Credit: https://stackoverflow.com/a/64432393/17127255 */
+    function handleTouchStart(e:React.TouchEvent<HTMLDivElement>) {
+        setTouchStart(e.targetTouches[0].clientX);
+    }
+    
+    function handleTouchMove(e:React.TouchEvent<HTMLDivElement>) {
+        setTouchEnd(e.targetTouches[0].clientX);
+    }
+    
+    function handleTouchEnd(length:number) {
+        if (touchStart - touchEnd > 50) {
+            if(imageNum < length - 1) {
+                let etarget = document.querySelector(`#mult-img-${imageNum + 1}`) as HTMLDivElement;
+
+                setImageNum(imageNum + 1);
+                moveCarousel(etarget, imageNum + 1);
+            }
+        }
+    
+        if (touchStart - touchEnd < -50) {
+            if(imageNum > 0) {
+                let etarget = document.querySelector(`#mult-img-${imageNum - 1}`) as HTMLDivElement;
+
+                setImageNum(imageNum - 1);
+                moveCarousel(etarget, imageNum - 1);
+            }
+        }
     }
 
     return (

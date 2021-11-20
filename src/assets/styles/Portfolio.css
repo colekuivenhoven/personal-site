@@ -435,7 +435,7 @@
     min-width: 100%;
     filter: opacity(1);
     cursor: default;
-    pointer-events: none;
+    pointer-events: touch;
     box-shadow: 0px 0.5vmin 0.75vmin 2px rgba(0,0,0,0.2);
 }
 
