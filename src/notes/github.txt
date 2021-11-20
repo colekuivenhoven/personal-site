@@ -2,7 +2,7 @@
 git add .
 
 // Commit local repo with message
-git commit -m "Updated Resume FIX 3"
+git commit -m "Updated Resume FIX 4"
 
 // Push to remote repo
 git push -u origin master --force
