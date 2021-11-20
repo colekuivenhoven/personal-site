@@ -282,14 +282,14 @@
     box-sizing: border-box;
     padding: 1vmin;
     background-color: rgba(0,0,0,0.0);
-    backdrop-filter: blur(0px);
+    /* backdrop-filter: blur(0px); */
     pointer-events: none;
     z-index: 100;
     transition: all 0.15s ease-in-out;
 }
 
 .portfolio-modal.active {
-    backdrop-filter: blur(3px);
+    /* backdrop-filter: blur(3px); */
     pointer-events: all;
     background-color: rgba(0,0,0,0.1);
 }
@@ -315,7 +315,7 @@
 
 .portfolio-modal-close.active {
     transform: translateX(0) rotate(45deg);
-    opacity: 100%;
+    opacity: 1;
 }
 
 .portfolio-modal-close.active:hover {
