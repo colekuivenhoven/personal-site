@@ -124,10 +124,9 @@ function Portfolio(props:any) {
         },
         {
             title: "Cyltex LLC",
-            overview: `The Homer Forder Tennis Center(HFTC) web application is the active web presenece, reservation mangement,
-                       and user management system for the Homer Ford Tennis Center. The application is built with React, and
-                       features reservations systems for both the customers and employees. This application was made to replace
-                       their existing paper-based systems.
+            overview: `The Django-based web application I made for Cyltex LLC was meant to replace their existing paper-based systems for project
+                       management, user management, timesheet management, and other administrative tasks. On the backend, this application connects
+                       to an MSSQL database hosted on a local Windows Server 2016 machine. 
                       `,
             development: [
                 {
@@ -161,10 +160,9 @@ function Portfolio(props:any) {
         },
         {
             title: "Weather App",
-            overview: `The Homer Forder Tennis Center(HFTC) web application is the active web presenece, reservation mangement,
-                       and user management system for the Homer Ford Tennis Center. The application is built with React, and
-                       features reservations systems for both the customers and employees. This application was made to replace
-                       their existing paper-based systems.
+            overview: `This weather app features the ability to search for weather information by zip code, which is then converted to a latitude and
+                       longitude, and then the weather information is pulled from the OpenWeather API. The app also features a the ability to pull
+                       additional weather information from a chosen date, as well as a darkmode toggle switch(for the user's viewing convenience).
                       `,
             development: [
                 {
@@ -191,10 +189,9 @@ function Portfolio(props:any) {
         },
         {
             title: "Personal Portfolio",
-            overview: `The Homer Forder Tennis Center(HFTC) web application is the active web presenece, reservation mangement,
-                       and user management system for the Homer Ford Tennis Center. The application is built with React, and
-                       features reservations systems for both the customers and employees. This application was made to replace
-                       their existing paper-based systems.
+            overview: `This is my personal portfolio website, and is my third iteration of the website. It features my own custom implementation
+                       of a dynamic image carousel, animated waves, dynamic animated text, and custom item lists to display my projects. I've used
+                       AWS Amplify, Route 53, and React to build this website.
                       `,
             development: [
                 {
