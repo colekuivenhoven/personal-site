@@ -44,12 +44,20 @@ function Home(props:any) {
                     <div className="intro-text-image" />
                     <div className="intro-text-container">
                         <div className="intro-title">Cole Kuivenhoven</div>
-                        <div className="intro-text">Fullstack engineer based in San Antonio, Texas.</div>
+                        <div className="intro-text"
+                            style={{
+                                fontSize: isMobile ? '3.25vmin' : '',
+                            }}
+                        >Fullstack engineer based in San Antonio, Texas.</div>
                         <div style={{
                             display: "flex", flexDirection: "row"
                         }}>
-                            <a href="/portfolio" className="intro-btn" style={{marginRight: "1vmin"}}
-
+                            <a href="/portfolio" className="intro-btn" 
+                                style={{
+                                    marginRight: "1vmin",
+                                    fontSize: isMobile ? '2.5vmin' : '',
+                                    marginTop: isMobile ? '2vmin' : '',
+                                }}
                             >VIEW MY WORK</a>
                         </div>
                     </div>
@@ -58,12 +66,21 @@ function Home(props:any) {
                     <div className="wave primary" />
                     <div className="wave secondary" />
                 </div>
-                <div className="home-motto">
+                <div className="home-motto"
+                    style={{
+                        height: isMobile ? "40vh" : ""
+                    }}
+                >
                     <div className="motto-container">
-                        <div className="motto-title">A bit about me...</div>
+                        <div className="motto-title"
+                            style={{
+                                fontSize: isMobile ? "6vmin" : ""
+                            }}
+                        >A bit about me...</div>
                         <div className="motto-text"
                             style={{
-                                marginTop: "2vmin"
+                                marginTop: "2vmin",
+                                fontSize: isMobile ? "3vmin" : ""
                             }}
                         >
                             I'm a self-motivated fullstack engineer with hands-on project experience designing and 
@@ -72,13 +89,13 @@ function Home(props:any) {
                         <div className="motto-text"
                             style={{
                                 marginTop: "4vmin",
-                                fontSize: "2.5vmin"
+                                fontSize: isMobile ? "3vmin" : "2.5vmin"
                             }}
                         >
                             Here are some of the <span className="topic">topics</span> and <span className="topic">ideas</span> that I'm interested in...
                         </div>
                         {isTyping ? <Typist 
-                            className="motto-text topics"
+                            className={`motto-text topics ${isMobile ? "mobile" : ""}`}
                             avgTypingDelay={100}
                             onTypingDone={() => {
                                 doneTyping();

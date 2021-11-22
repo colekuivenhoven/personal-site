@@ -101,21 +101,22 @@ function Portfolio(props:any) {
                       `,
             development: [
                 {
-                    name: "Deep Learning Vocal Isolation",
-                    desc: `Separate reservation systems made to account for the simplicity a customer needs, and the complexity an employee needs.`,
+                    name: "Deep Learning Multi-Channel Isolation",
+                    desc: `Utilizing Spleeter, the app is able to separate a given audio file into up to 4 separate channels which can be downloaded
+                           by the user.`,
                 },
                 {
                     name: "ExpressJS Python Integration",
                     desc: `
-                        Detailed user management allows employees to perform full CRUD operations on the user database without having to leave the
-                        web application. 
+                        The backend of the application is built with ExpressJS and Python. ExpressJS calls the given Python script to perform the 
+                        audio separation, which is then returned to the server to distribute to the user.
                         `,
                 },
                 {
                     name: "Dynamic Isolation Options",
                     desc: `
-                        The employee facing side of the application features a dynamic database report system that allows employees to view SQL 
-                        query-based reports on various tables in the database.
+                        Air Splitter features a dynamic selection of options for the user to choose from, allowing the user to isolate and audio file
+                        into up to 4 different channels/stems.
                     `,
                 },
             ],
@@ -131,7 +132,8 @@ function Portfolio(props:any) {
             development: [
                 {
                     name: "Dual-sided Project Management System",
-                    desc: `Separate reservation systems made to account for the simplicity a customer needs, and the complexity an employee needs.`,
+                    desc: `Separate project management systems made to account for ease of use on the employee side, and the complex management on the
+                           administrative side.`,
                 },
                 {
                     name: "User Management System",
@@ -143,15 +145,15 @@ function Portfolio(props:any) {
                 {
                     name: "Timesheet Management System",
                     desc: `
-                        The employee facing side of the application features a dynamic database report system that allows employees to view SQL 
-                        query-based reports on various tables in the database.
+                        Employees of all kinds are able to submit timesheets to the system, which are then stored in the database. The system also allows
+                        employees to view their own timesheets, and the admin to manage all timesheets submitted.
                     `,
                 },
                 {
                     name: "Multi-device support",
                     desc: `
-                        The customer facing side of the application features a notification system that allows customers to enable and recieve
-                        notifications from the system regarding their reservations.
+                        The application features a mobile-friendly design so that users can access the application from any device. This allows employees
+                        to change data from their mobile devices, and an admin to manage data submitted from any device.
                     `,
                 },
             ],
@@ -167,20 +169,19 @@ function Portfolio(props:any) {
             development: [
                 {
                     name: "OpenWeather API Integration",
-                    desc: `Separate reservation systems made to account for the simplicity a customer needs, and the complexity an employee needs.`,
+                    desc: `This app utilizes the OpenWeather API to retrieve detailed weather information using submitted longitude and latitude.`,
                 },
                 {
                     name: "Multi-device support",
                     desc: `
-                        Detailed user management allows employees to perform full CRUD operations on the user database without having to leave the
-                        web application. 
+                        The application also features a mobile-friendly design so that users can access the application from any device without
+                        sacrificing usability.
                         `,
                 },
                 {
                     name: "Darkmode Toggle",
                     desc: `
-                        The employee facing side of the application features a dynamic database report system that allows employees to view SQL 
-                        query-based reports on various tables in the database.
+                        From the styling perspective, users can also toggle the darkmode of the application depending on their preference.
                     `,
                 },
             ],
@@ -196,27 +197,27 @@ function Portfolio(props:any) {
             development: [
                 {
                     name: "Live with AWS Amplify & Route 53",
-                    desc: `Separate reservation systems made to account for the simplicity a customer needs, and the complexity an employee needs.`,
+                    desc: `This app was deployed with AWS Amplify to host the application, and AWS Route 53 for connection to the domain name.`,
                 },
                 {
                     name: "Custom Image Carousel",
                     desc: `
-                        Detailed user management allows employees to perform full CRUD operations on the user database without having to leave the
-                        web application. 
+                        This personal portfolio website features a custom image carousel that allows the user to view a list of images of my projects,
+                        while also providing touch, swipe, and click functionality.
                         `,
                 },
                 {
                     name: "Real-time Typing Animation",
                     desc: `
-                        The employee facing side of the application features a dynamic database report system that allows employees to view SQL 
-                        query-based reports on various tables in the database.
+                        Using the React Typist library, this app features a real-time animated typing animation that allows the user to view a list of
+                        topics and ideas that I'm interested in.
                     `,
                 },
                 {
                     name: "Multi-device support",
                     desc: `
-                        The customer facing side of the application features a notification system that allows customers to enable and recieve
-                        notifications from the system regarding their reservations.
+                        The application also features a mobile-friendly design so that users can access it from any device without
+                        sacrificing usability.
                     `,
                 },
             ],
@@ -396,7 +397,7 @@ function Portfolio(props:any) {
                 {renderInformationItem(
                     "Homer Ford Tennis Center", 
                     ["React", "SocketIO", "Express", "MySQL", "AWS", "NodeMailer", "Javascript", "CSS3", "HTML5"],
-                    "A dynamic web app for users to isolate uploaded music into individual vocal and instrumental channels.",
+                    "The reservation and user management system used by Homer Ford Tennis Center.",
                     [
                         {
                             name: "Live Site", 
@@ -442,7 +443,7 @@ function Portfolio(props:any) {
                 {renderInformationItem(
                     "Cyltex LLC - Project & User Management", 
                     ["Django", "MSSQL", "Python", "Javascript", "AJAX", "HTML5", "Bootstrap"],
-                    "A dynamic web app for users to isolate uploaded music into 2-4 individual channels.",
+                    "A project, timesheet, and user management system used by the compressed gas distributer, Cyltex.",
                     [
                         {
                             name: "GitHub", 
@@ -461,7 +462,7 @@ function Portfolio(props:any) {
                 {renderInformationItem(
                     "Weather App", 
                     ["React", "Typescript", "Express", "CSS3", "HTML5"],
-                    "A dynamic web app for users to isolate uploaded music into 2-4 individual channels.",
+                    "An responsive weather tracking application allowing the user to enter their zip code to get local weather information.",
                     [
                         {
                             name: "Live Site", 
@@ -484,7 +485,7 @@ function Portfolio(props:any) {
                 {renderInformationItem(
                     "Personal Portfolio", 
                     ["React", "Typescript", "AWS Amplify", "AWS Route 53", "CSS3", "HTML5"],
-                    "A dynamic web app for users to isolate uploaded music into 2-4 individual channels.",
+                    "My portfolio website that was designed and developed as a platform to showcase my design and development skills as a fullstack engineer.",
                     [
                         {
                             name: "Live Site", 
@@ -521,6 +522,9 @@ function Portfolio(props:any) {
                     )}
                 </div>
                 <div className={`portfolio-modal-close ${modalActive ? "active" : ""}`} 
+                    style={{
+                        marginTop: isMobile ? "calc(50vh - 45vw)" : "",
+                    }}
                     onClick={() => {
                         toggleModal();
                         setImageNum(0);

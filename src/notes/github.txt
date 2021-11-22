@@ -2,7 +2,7 @@
 git add .
 
 // Commit local repo with message
-git commit -m "Updated Descriptions"
+git commit -m "Added Partial Mobile Formatting"
 
 // Push to remote repo
 git push -u origin master --force

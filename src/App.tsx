@@ -52,13 +52,18 @@ function App() {
     <Router>
       <div className="App">
         <div className="navbar">
-          <div className="logo" />
+          <div className="logo" 
+            style={{
+              width: isMobile ? "12vmin" : ""
+            }}
+          />
           <div className="nav-links">
             <Link 
               to="/"
               className={`nav-route-btn ${(currentPage.name == 'home') ? "active" : ""}`}
               style={{
                 animationDelay: '0.0s',
+                fontSize: isMobile ? "4vmin" : ""
               }}
               onClick={(e) => handleClickNavLink(e, 'home')}
               onAnimationEnd={(e) => currentPage.name == 'home' ? handleClickNavLink(e, 'home') : null}
@@ -70,6 +75,7 @@ function App() {
               className={`nav-route-btn ${(currentPage.name == 'portfolio') ? "active" : ""}`}
               style={{
                 animationDelay: '0.2s',
+                fontSize: isMobile ? "4vmin" : ""
               }}
               onClick={(e) => handleClickNavLink(e, 'portfolio')}
               onAnimationEnd={(e) => currentPage.name == 'portfolio' ? handleClickNavLink(e, 'portfolio') : null}
@@ -80,6 +86,7 @@ function App() {
               className={`nav-route-btn ${(currentPage.name == 'contact') ? "active" : ""}`}
               style={{
                 animationDelay: '0.4s',
+                fontSize: isMobile ? "4vmin" : ""
               }}
               onClick={() => {
                 let app = document.querySelector('.App') as HTMLElement;
