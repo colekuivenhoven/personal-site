@@ -57,6 +57,8 @@ function Home(props:any) {
                                     marginRight: "1vmin",
                                     fontSize: isMobile ? '2.5vmin' : '',
                                     marginTop: isMobile ? '2vmin' : '',
+                                    boxShadow: isMobile ? 'none' : '',
+                                    border: isMobile ? '0.6vmin solid rgb(41, 126, 255)' : '',
                                 }}
                             >VIEW MY WORK</a>
                         </div>

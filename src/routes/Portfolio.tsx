@@ -320,7 +320,7 @@ function Portfolio(props:any) {
                         style={{
                             border: `${image_border}`,
                             width: isMobile ? "95%" : "",
-                            marginRight: isMobile ? "2vmin" : ""
+                            marginRight: isMobile ? "2vmin" : "",
                         }}
                         onTouchStart={(e) => handleTouchStart(e)}
                         onTouchMove={(e) => handleTouchMove(e)}
@@ -549,10 +549,8 @@ function Portfolio(props:any) {
             <div className={`portfolio-modal ${modalActive ? "active" : ""}`}>
                 <div className={`portfolio-modal-content ${modalActive ? "active" : ""}`}
                     style={{
-                        marginBottom: isMobile ? "auto" : "",
-                        marginTop: isMobile ? "3vmin" : "",
-                        width: isMobile ? "80vmin" : "",
-                        aspectRatio: isMobile ? "0.6" : ""
+                        width: isMobile ? "90vmin" : "",
+                        aspectRatio: isMobile ? "0.6" : "",
                     }}
                 >
                     {renderModalContent(
@@ -564,9 +562,12 @@ function Portfolio(props:any) {
                     )}
                 </div>
                 <div className={`portfolio-modal-close ${modalActive ? "active" : ""}`} 
-                    style={{
-                        marginTop: isMobile ? "3vmin" : ""
-                    }}
+                    style={isMobile ?{
+                        position: "absolute",
+                        top: "calc(50% - 81vmin)",
+                        right: "calc(50% - 48vmin)",
+                        width: "8vmin",
+                    }:{}}
                     onClick={() => {
                         toggleModal();
                         setImageNum(0);
