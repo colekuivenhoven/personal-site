@@ -109,7 +109,7 @@ function Portfolio(props:any) {
                     name: "ExpressJS Python Integration",
                     desc: `
                         The backend of the application is built with ExpressJS and Python. ExpressJS calls the given Python script to perform the 
-                        audio separation, which is then returned to the server to distribute to the user.
+                        audio separation.
                         `,
                 },
                 {
@@ -145,8 +145,8 @@ function Portfolio(props:any) {
                 {
                     name: "Timesheet Management System",
                     desc: `
-                        Employees of all kinds are able to submit timesheets to the system, which are then stored in the database. The system also allows
-                        employees to view their own timesheets, and the admin to manage all timesheets submitted.
+                        Employees are able to submit timesheets to the system, which are then stored in the database. The system also allows
+                        employees to view their own timesheets.
                     `,
                 },
                 {
@@ -311,10 +311,16 @@ function Portfolio(props:any) {
         return (
             <>
                 <div className="modal-title">{title}</div>
-                <div className="modal-body">
+                <div className="modal-body"
+                    style={{
+                        justifyContent: isMobile ? "space-between" : ""
+                    }}
+                >
                     <div className="section-image-container"
                         style={{
-                            border: `${image_border}`
+                            border: `${image_border}`,
+                            width: isMobile ? "95%" : "",
+                            marginRight: isMobile ? "2vmin" : ""
                         }}
                         onTouchStart={(e) => handleTouchStart(e)}
                         onTouchMove={(e) => handleTouchMove(e)}
@@ -326,7 +332,8 @@ function Portfolio(props:any) {
                                     className={`section-image ${imageNum == index ? "active" : ""}`} key={index}
                                     id={`mult-img-${index}`}
                                     style={{
-                                        backgroundImage: `url(${img})`
+                                        backgroundImage: `url(${img})`,
+
                                     }}
                                     onClick={(e) => {
                                         if(imageNum != index) {
@@ -339,17 +346,41 @@ function Portfolio(props:any) {
                         })}
                     </div>
                     <div className="modal-section">
-                        <div className="section-head">Overview</div>
-                        <div className="section-text">{overview}</div>
+                        <div className="section-head"
+                            style={{
+                                fontSize: isMobile ? "4.5vmin" : ""
+                            }}
+                        >Overview</div>
+                        <div className="section-text"
+                            style={{
+                                fontSize: isMobile ? "2.5vmin" : ""
+                            }}
+                        >{overview}</div>
                     </div>
                     <div className="modal-section">
-                        <div className="section-head">Development</div>
+                        <div className="section-head"
+                            style={{
+                                fontSize: isMobile ? "4.5vmin" : ""
+                            }}
+                        >Development</div>
                         <div className="modal-section sub">
                             {development.map((feature, index) => {
                                 return (
-                                    <div className="subsection-item" key={index}>
-                                        <div className="subsection-name">{feature.name}</div>
-                                        <div className="subsection-text">{feature.desc}</div>
+                                    <div className="subsection-item" key={index}
+                                        style={{
+                                            aspectRatio: isMobile ? "2" : ""
+                                        }}
+                                    >
+                                        <div className="subsection-name"
+                                            style={{
+                                                fontSize: isMobile ? "2.5vmin" : ""
+                                            }}
+                                        >{feature.name}</div>
+                                        <div className="subsection-text"
+                                            style={{
+                                                fontSize: isMobile ? "1.75vmin" : ""
+                                            }}
+                                        >{feature.desc}</div>
                                     </div>
                                 )
                             })}
@@ -399,10 +430,10 @@ function Portfolio(props:any) {
                     ["React", "SocketIO", "Express", "MySQL", "AWS", "NodeMailer", "Javascript", "CSS3", "HTML5"],
                     "The reservation and user management system used by Homer Ford Tennis Center.",
                     [
-                        {
-                            name: "Live Site", 
-                            link: "#"
-                        },
+                        // {
+                        //     name: "Live Site", 
+                        //     link: "#"
+                        // },
                         {
                             name: "GitHub", 
                             link: "https://github.com/colekuivenhoven/HFTennisCenter"
@@ -422,10 +453,10 @@ function Portfolio(props:any) {
                     ["React", "Tensorflow", "Express", "Typescript", "Python", "FFMPEG", "CSS3", "HTML5"],
                     "A dynamic web app for users to isolate uploaded music into 2-4 individual channels.",
                     [
-                        {
-                            name: "Live Site", 
-                            link: "#"
-                        },
+                        // {
+                        //     name: "Live Site", 
+                        //     link: "#"
+                        // },
                         {
                             name: "GitHub", 
                             link: "https://github.com/colekuivenhoven/AirSplitter-Client"
@@ -445,6 +476,10 @@ function Portfolio(props:any) {
                     ["Django", "MSSQL", "Python", "Javascript", "AJAX", "HTML5", "Bootstrap"],
                     "A project, timesheet, and user management system used by the compressed gas distributer, Cyltex.",
                     [
+                        // {
+                        //     name: "Live Site", 
+                        //     link: "#"
+                        // },
                         {
                             name: "GitHub", 
                             link: "https://github.com/colekuivenhoven/django-project-management"
@@ -464,10 +499,10 @@ function Portfolio(props:any) {
                     ["React", "Typescript", "Express", "CSS3", "HTML5"],
                     "An responsive weather tracking application allowing the user to enter their zip code to get local weather information.",
                     [
-                        {
-                            name: "Live Site", 
-                            link: "#"
-                        },
+                        // {
+                        //     name: "Live Site", 
+                        //     link: "#"
+                        // },
                         {
                             name: "GitHub", 
                             link: "https://github.com/colekuivenhoven/Weather-Frontend"
@@ -487,10 +522,10 @@ function Portfolio(props:any) {
                     ["React", "Typescript", "AWS Amplify", "AWS Route 53", "CSS3", "HTML5"],
                     "My portfolio website that was designed and developed as a platform to showcase my design and development skills as a fullstack engineer.",
                     [
-                        {
-                            name: "Live Site", 
-                            link: "#"
-                        },
+                        // {
+                        //     name: "Live Site", 
+                        //     link: "#"
+                        // },
                         {
                             name: "GitHub", 
                             link: "https://github.com/colekuivenhoven/personal-site"
@@ -512,7 +547,14 @@ function Portfolio(props:any) {
                 viewport_info={_v} 
             />
             <div className={`portfolio-modal ${modalActive ? "active" : ""}`}>
-                <div className={`portfolio-modal-content ${modalActive ? "active" : ""}`}>
+                <div className={`portfolio-modal-content ${modalActive ? "active" : ""}`}
+                    style={{
+                        marginBottom: isMobile ? "auto" : "",
+                        marginTop: isMobile ? "3vmin" : "",
+                        width: isMobile ? "80vmin" : "",
+                        aspectRatio: isMobile ? "0.6" : ""
+                    }}
+                >
                     {renderModalContent(
                         portfolioInfo.title,
                         portfolioInfo.overview,
@@ -523,7 +565,7 @@ function Portfolio(props:any) {
                 </div>
                 <div className={`portfolio-modal-close ${modalActive ? "active" : ""}`} 
                     style={{
-                        marginTop: isMobile ? "calc(50vh - 45vw)" : "",
+                        marginTop: isMobile ? "3vmin" : ""
                     }}
                     onClick={() => {
                         toggleModal();

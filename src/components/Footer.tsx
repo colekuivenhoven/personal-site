@@ -14,7 +14,11 @@ function Footer(props:any) {
                     height: isMobile ? "25vh" : ""
                 }}
             >
-                <div className="contact-container">
+                <div className="contact-container"
+                    style={{
+                        width: isMobile ? "75vmin" : "",
+                    }}
+                >
                     <div className="contact-title"
                         style={{
                             fontSize: isMobile ? "5vmin" : ""
@@ -30,8 +34,16 @@ function Footer(props:any) {
                         Call or email if you want to get in touch with me.
                     </div>
                     <div className="contact-btn-row">
-                        <a className="contact-btn" href="mailto: kuivenhovenc@gmail.com">kuivenhovenc@gmail.com</a>
-                        <a className="contact-btn" href="tel: 210-296-7259">(210) 296-7259</a>
+                        <a className="contact-btn" href="mailto: kuivenhovenc@gmail.com"
+                            style={{
+                                fontSize: isMobile ? "3vmin" : ""
+                            }}
+                        >kuivenhovenc@gmail.com</a>
+                        <a className="contact-btn" href="tel: 210-296-7259"
+                            style={{
+                                fontSize: isMobile ? "3vmin" : ""
+                            }}
+                        >(210) 296-7259</a>
                     </div>
                 </div>
                 <div className="home-anchor-up" />
