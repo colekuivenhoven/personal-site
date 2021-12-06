@@ -2,7 +2,7 @@
 git add .
 
 // Commit local repo with message
-git commit -m "Updated mobile styles"
+git commit -m "Compressed profile image for quicker loading."
 
 // Push to remote repo
 git push -u origin master --force
